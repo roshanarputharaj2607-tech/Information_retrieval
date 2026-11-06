@@ -1,17 +1,14 @@
-# Comparative Study on Text Classification Classifiers
+# Text Classification Comparative Study
 
-This project presents a comparative analysis of four machine learning algorithms (**Decision Tree, K-Nearest Neighbours, Support Vector Machine, and Naïve Bayes**) for a text-classification task using the classic 20 Newsgroups dataset subset.
+This repository contains my implementation for the Text Classification comparative assignment. I evaluated four classification models: Decision Tree, K-Nearest Neighbours (KNN), Support Vector Machine (SVM), and Naïve Bayes on a subset of the 20 Newsgroups text dataset.
 
-## 📌 Task Overview
-- **Dataset**: 20 Newsgroups (Subset: `comp.graphics`, `sci.med`, `sci.space`, `talk.politics.mideast`)
-- **Features**: TF-IDF (Term Frequency-Inverse Document Frequency) vectorization (2,500 features)
-- **Models Evaluated**: Decision Tree, KNN, SVM, Naïve Bayes
-- **Evaluation Metrics**: Accuracy, Precision, Recall, F1-score
-- **What-If Experiment**: SVM Kernel Parameter Analysis (Linear vs. RBF)
+## Dataset and Setup
+- **Source**: Scikit-Learn 20 Newsgroups
+- **Target Categories**: `comp.graphics`, `sci.med`, `sci.space`, `talk.politics.mideast`
+- **Text Preprocessing**: Removed headers, footers, quotes, and English stop words. Calculated TF-IDF representations (2,500 maximum features).
+- **Validation Plan**: Stratified 80/20 train/test split.
 
----
-
-## 📊 Results Summary
+## Metrics Comparison
 
 | Algorithm | Accuracy | Precision (Macro) | Recall (Macro) | F1-score (Macro) |
 | :--- | :---: | :---: | :---: | :---: |
@@ -20,24 +17,17 @@ This project presents a comparative analysis of four machine learning algorithms
 | **Decision Tree** | 76.22% | 77.01% | 76.26% | 76.46% |
 | **K-Nearest Neighbours (KNN)** | 35.99% | 41.76% | 35.79% | 33.67% |
 
----
+## Visualizations
+All generated execution charts can be found in the repository:
+- `performance_comparison.png` (Accuracy, Precision, Recall, F1 comparison plot)
+- `confusion_matrices.png` (Confusion Matrix heatmaps)
 
-## 📈 Visualizations
-
-### Performance Comparison
-![Performance Comparison](performance_comparison.png)
-
-### Confusion Matrices
-![Confusion Matrices](confusion_matrices.png)
-
----
-
-## 🛠️ Installation & Execution
-To replicate this study, install the required packages:
+## How to run the project
+Ensure dependencies are installed:
 ```bash
 pip install -r requirements.txt
 ```
-Run the primary classification script:
+Run the execution file:
 ```bash
 python main.py
 ```
